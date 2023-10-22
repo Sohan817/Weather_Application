@@ -1,3 +1,6 @@
+<?php
+require_once 'weatherApp.php';
+?>
 <!doctype html>
 <html lang="en">
 
@@ -34,12 +37,12 @@
         input {
             width: 350px;
             padding: 5px;
-
             background: transparent;
         }
 
         ::placeholder {
             color: black;
+            opacity: 1;
         }
     </style>
 </head>
@@ -52,7 +55,19 @@
             <p><input type="text" name="city" id="city" placeholder="City Name"></p>
             <button type="submit" name="submit" class="btn btn-success">Search</button>
             <div class="output">
+                <?php
+                if (!empty($weather)) {
+                    echo '<div class="alert alert-success" role="alert">'
+                        . $weather .
+                        '</div>';
+                }
+                if (!empty($error)) {
+                    echo '<div class="alert alert-danger" role="alert">'
+                        . $error .
+                        '</div>';
+                }
 
+                ?>
             </div>
         </form>
     </div>
