@@ -54,7 +54,7 @@ require_once 'weatherApp.php';
             <p><label for="city">Enter Your city Name</label></p>
             <p><input type="text" name="city" id="city" placeholder="City Name"></p>
             <button type="submit" name="submit" class="btn btn-success">Search</button>
-            <div class="output">
+            <div class="output mt-3">
                 <?php
                 if (!empty($weather)) {
                     echo '<div class="alert alert-success" role="alert">'
